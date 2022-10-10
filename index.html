@@ -13,9 +13,64 @@
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 </head>
 <body>
-    
     <span id="response-text"></span>
+    <header class="custom-jumbotron">Weather Dashboard</header> 
+<div class="row">
+    <div class="col-md-3 custom-one">
+            <h1>Search for City:</h1>
+            <input id="search-bar" type="search" placeholder="Denver">
+            </br> </br>
+            <button id="search-button">Search</button>
+            <br> <br> <br>
+            <button class="history-button">Recent search</button>
+            <br> <br>
+            <button class="history-button">Recent search</button>
+            <br> <br>
+            <button class="history-button">Recent search</button>
+            <br> <br>
+            <button class="history-button">Recent search</button>
+            <br> <br>
+            <button class="history-button">Recent search</button>
+            <br> <br>
+            <button class="history-button">Recent search</button> 
+   </div>
 
+   <div class="col-md-9 custom-two">
+        <div class="day-1">
+            <h1 class="day-1-city"></h1>
+            <p>Temp:  <span class="day-1-temp"></span></p>
+            <p>Wind: <span class="day-1-wind"></span></p>
+            <p>Humidity:  <span class="day-1-humidity"></span></p>
+        </div>
+    </div>
+    <h2 class="five-day flex">5 Day Forecast:</h2>
+       <div class="row"> 
+            <div class="col-md-2 day-2">
+                <h2 id ='date-tomorrow'></h2>
+                <p>Temp:  <span class="day-2-temp"></span></p>
+                <p>Wind: <span class="day-2-wind"></span></p>
+                <p>Humidity:  <span class="day-2-humidity"></span></p>
+            </div>
+            <div class="col-md-2 day-3">
+                <h2 id ='date-three'></h2>
+                <p>Temp:  <span class="day-3-temp"></span></p>
+                <p>Wind: <span class="day-3-wind"></span></p>
+                <p>Humidity:  <span class="day-3-humidity"></span></p>
+            </div>
+            <div class="col-md-2 day-4">
+                <h2 id ='date-four'></h2>
+                <p>Temp:  <span class="day-4-temp"></span></p>
+                <p>Wind: <span class="day-4-wind"></span></p>
+                <p>Humidity:  <span class="day-4-humidity"></span></p>
+            </div>
+        </div>
+
+        
+
+</div>
+        
+
+    
 
 
 
