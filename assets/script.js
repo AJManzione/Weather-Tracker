@@ -8,6 +8,9 @@ var date = (moment().format("M" + "/" + "D" + "/" + "YYYY"));
 var dateTwo = document.querySelector('#date-tomorrow');
 var dateThree = document.querySelector('#date-three');
 var dateFour = document.querySelector('#date-four')
+var dateFive = document.querySelector('#date-five')
+var dateSix = document.querySelector('#date-six')
+
 
 var dayOneCity = document.querySelector('.day-1-city');
 var dayOneTemp = document.querySelector('.day-1-temp');
@@ -25,6 +28,14 @@ var dayThreeHumidity = document.querySelector('.day-3-humidity');
 var dayFourTemp = document.querySelector('.day-4-temp');
 var dayFourWind = document.querySelector('.day-4-wind');
 var dayFourHumidity = document.querySelector('.day-4-humidity');
+
+var dayFiveTemp = document.querySelector('.day-5-temp');
+var dayFiveWind = document.querySelector('.day-5-wind');
+var dayFiveHumidity = document.querySelector('.day-5-humidity');
+
+var daySixTemp = document.querySelector('.day-6-temp');
+var daySixWind = document.querySelector('.day-6-wind');
+var daySixHumidity = document.querySelector('.day-6-humidity');
 
 
 
@@ -96,11 +107,8 @@ button.addEventListener('click', function() {
 
 //Fourth Day 
       var dayFourTempValue = data['list'][3]['main']['temp']; 
-      console.log(dayFourTempValue);
       var dayFourHumidityValue = data['list'][3]['main']['humidity'];
-      console.log(dayFourHumidityValue);
       var dayFourWindValue = data['list'][3]['wind']['speed'];
-      console.log(dayFourWindValue);
 
       dayFourTempValue = (dayFourTempValue - 273) * 1.8 + 32;
       dayFourTempValue = Math.round(dayFourTempValue);
@@ -110,6 +118,40 @@ button.addEventListener('click', function() {
       dayFourTemp.innerHTML = dayFourTempValue + " °F";
       dayFourHumidity.innerHTML = dayFourHumidityValue;
       dayFourWind.innerHTML = dayFourWindValue + " MPH";
+
+//Fifth Day 
+      var dayFiveTempValue = data['list'][4]['main']['temp']; 
+      console.log(dayFiveTempValue);
+      var dayFiveHumidityValue = data['list'][4]['main']['humidity'];
+      console.log(dayFiveHumidityValue);
+      var dayFiveWindValue = data['list'][4]['wind']['speed'];
+      console.log(dayFiveWindValue);
+
+      dayFiveTempValue = (dayFiveTempValue - 273) * 1.8 + 32;
+      dayFiveTempValue = Math.round(dayFiveTempValue);
+
+      var fifthDayDate = (moment().add(4, 'days').format("M" + "/" + "D" + "/" + "YYYY"));
+      dateFive.innerHTML = fifthDayDate;
+      dayFiveTemp.innerHTML = dayFiveTempValue + " °F";
+      dayFiveHumidity.innerHTML = dayFiveHumidityValue;
+      dayFiveWind.innerHTML = dayFiveWindValue + " MPH";
+
+//Sixth Day 
+      var daySixTempValue = data['list'][5]['main']['temp']; 
+      console.log(daySixTempValue);
+      var daySixHumidityValue = data['list'][5]['main']['humidity'];
+      console.log(daySixHumidityValue);
+      var daySixWindValue = data['list'][5]['wind']['speed'];
+      console.log(daySixWindValue);
+
+      daySixTempValue = (daySixTempValue - 273) * 1.8 + 32;
+      daySixTempValue = Math.round(daySixTempValue);
+
+      var sixthDayDate = (moment().add(5, 'days').format("M" + "/" + "D" + "/" + "YYYY"));
+      dateSix.innerHTML = sixthDayDate;
+      daySixTemp.innerHTML = daySixTempValue + " °F";
+      daySixHumidity.innerHTML = daySixHumidityValue;
+      daySixWind.innerHTML = daySixWindValue + " MPH";
 
     }); 
 })})

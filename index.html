@@ -15,8 +15,7 @@
 <body>
     <span id="response-text"></span>
     <header class="custom-jumbotron">Weather Dashboard</header> 
-<div class="row">
-    <div class="col-md-3 custom-one">
+    <div class="col-md-2 custom-one">
             <h1>Search for City:</h1>
             <input id="search-bar" type="search" placeholder="Denver">
             </br> </br>
@@ -34,8 +33,7 @@
             <br> <br>
             <button class="history-button">Recent search</button> 
    </div>
-
-   <div class="col-md-9 custom-two">
+    <div class="col-md-9 custom-two">
         <div class="day-1">
             <h1 class="day-1-city"></h1>
             <p>Temp:  <span class="day-1-temp"></span></p>
@@ -43,7 +41,9 @@
             <p>Humidity:  <span class="day-1-humidity"></span></p>
         </div>
     </div>
-    <h2 class="five-day flex">5 Day Forecast:</h2>
+    
+    <h2 class=" col-md-9 five-day">5 Day Forecast:</h2>
+    
        <div class="row"> 
             <div class="col-md-2 day-2">
                 <h2 id ='date-tomorrow'></h2>
@@ -63,12 +63,22 @@
                 <p>Wind: <span class="day-4-wind"></span></p>
                 <p>Humidity:  <span class="day-4-humidity"></span></p>
             </div>
+            <div class="col-md-2 day-5">
+                <h2 id ='date-five'></h2>
+                <p>Temp:  <span class="day-5-temp"></span></p>
+                <p>Wind: <span class="day-5-wind"></span></p>
+                <p>Humidity:  <span class="day-5-humidity"></span></p>
+            </div>
+            <div class="col-md-2 day-6">
+                <h2 id ='date-six'></h2>
+                <p>Temp:  <span class="day-6-temp"></span></p>
+                <p>Wind: <span class="day-6-wind"></span></p>
+                <p>Humidity:  <span class="day-6-humidity"></span></p>
+            </div>
         </div>
 
-        
-
-</div>
-        
+    
+ 
 
     
 

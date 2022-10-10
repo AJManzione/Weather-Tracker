@@ -18,33 +18,31 @@
 }
 
 p {
-    font-size: 20px;
+    font-size: 18px;
 }
 
-.custom-one {
-    height: 100vh;
-}
 
 .custom-two {
-    max-width: 73vw;
     border-style: solid;
     border-color: black;
     height: 30vh;
-    margin: 20px 0 0 10px;
+    margin: 20px 0 0 90px;
 
 }
 
 span {
-    font-size: 28px;
+    font-size: 20px;
 }
 
 .five-day {
-    margin-left: 800px;
+    text-align: center;
+    height: 50px;
 }
 
 
-.day-2, .day-3, .day-4{
-    margin-left: 10px;;
+.day-2, .day-3, .day-4, .day-5, .day-6 {
+    margin-left: 10px;
+    max-width: 15.5%;
     background-color: #457fca;
 }
 #search-bar {
