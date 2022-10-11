@@ -72,6 +72,8 @@ button.addEventListener('click', function() {
       dayOneHumidity.innerHTML = dayOneHumidityValue; 
       dayOneWind.innerHTML = dayOneWindValue + " MPH";
 
+      localStorage.setItem('city', dayOneCityValue);
+
 
   // 5 Day Forecast ---------------
 
@@ -121,11 +123,8 @@ button.addEventListener('click', function() {
 
 //Fifth Day 
       var dayFiveTempValue = data['list'][4]['main']['temp']; 
-      console.log(dayFiveTempValue);
       var dayFiveHumidityValue = data['list'][4]['main']['humidity'];
-      console.log(dayFiveHumidityValue);
       var dayFiveWindValue = data['list'][4]['wind']['speed'];
-      console.log(dayFiveWindValue);
 
       dayFiveTempValue = (dayFiveTempValue - 273) * 1.8 + 32;
       dayFiveTempValue = Math.round(dayFiveTempValue);
@@ -138,11 +137,8 @@ button.addEventListener('click', function() {
 
 //Sixth Day 
       var daySixTempValue = data['list'][5]['main']['temp']; 
-      console.log(daySixTempValue);
       var daySixHumidityValue = data['list'][5]['main']['humidity'];
-      console.log(daySixHumidityValue);
       var daySixWindValue = data['list'][5]['wind']['speed'];
-      console.log(daySixWindValue);
 
       daySixTempValue = (daySixTempValue - 273) * 1.8 + 32;
       daySixTempValue = Math.round(daySixTempValue);
