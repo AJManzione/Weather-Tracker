@@ -18,16 +18,13 @@
 
         <div class="search">
             <div class="div-search">
-                <h3>Search for a city:</h3>
+                <h1>Search for a city:</h1>
                 <input type="text" class="search-bar" id="input" placeholder="Denver">
                 <button class="search-button">Search</button>
             </div>
 
-            <div class="savedCity">
-                <div class="cityContainer" id="cityContainer">
-
-                </div>
-
+            <div class="cityContainer">
+                <div id="savedCity"></div>
             </div>
         </div>
 
@@ -36,9 +33,9 @@
             <div class="today-weather">
                 <p>Current forecast</p>
                 <div class="today">
-                    <h3 class="date"></h2>
+                    <h1 class="date"></h2>
                     <h2 class="city">City:</h2>
-                    <h1 class="temp">°F</h1>
+                    <h3 class="temp">°F</h1>
                     <div class="flex">
                         <img class ="icon" src="https://openweathermap.org/img/wn/02d.png" alt="" class="" />
                         <div class="description"></div>
@@ -48,7 +45,7 @@
                 </div>
             </div>
  
-            <h2>5 Day forecast:</h2>
+            <h2 id="five-day">5 Day forecast:</h2>
 
             <div class="week-weather">
                 <div class="week-day">
