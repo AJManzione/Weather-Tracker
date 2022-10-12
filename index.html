@@ -4,97 +4,112 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/assets/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;1,400;1,700&family=Cabin:wght@400;500;600;700&family=Raleway:wght@300;400&family=Roboto:ital,wght@0,100;0,400;1,100&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="/assets/style.css">
+    <title>Weather Dashboard</title>
 </head>
 <body>
-    <span id="response-text"></span>
-    <header class="custom-jumbotron">Weather Dashboard</header> 
-    <div class="col-md-2 custom-one">
-            <h1>Search for City:</h1>
-            <input id="search-bar" type="search" placeholder="Denver">
-            </br> </br>
-            <button id="search-button">Search</button>
-            <br> <br> <br>
-            <button class="history-button">Recent search</button>
-            <br> <br>
-            <button class="history-button">Recent search</button>
-            <br> <br>
-            <button class="history-button">Recent search</button>
-            <br> <br>
-            <button class="history-button">Recent search</button>
-            <br> <br>
-            <button class="history-button">Recent search</button>
-            <br> <br>
-            <button class="history-button">Recent search</button> 
-   </div>
-    <div class="col-md-9 custom-two">
-        <div class="day-1">
-            <h1 class="day-1-city"></h1>
-            <p>Temp:  <span class="day-1-temp"></span></p>
-            <p>Wind: <span class="day-1-wind"></span></p>
-            <p>Humidity:  <span class="day-1-humidity"></span></p>
-        </div>
-    </div>
-    
-    <h2 class=" col-md-9 five-day">5 Day Forecast:</h2>
-    
-       <div class="row"> 
-            <div class="col-md-2 day-2">
-                <h2 id ='date-tomorrow'></h2>
-                <p>Temp:  <span class="day-2-temp"></span></p>
-                <p>Wind: <span class="day-2-wind"></span></p>
-                <p>Humidity:  <span class="day-2-humidity"></span></p>
+
+    <header>
+        <h2>Weather Dashboard</h2>
+    </header>
+
+    <main class="card">
+
+        <div class="search">
+            <div class="div-search">
+                <h3>Search for a city:</h3>
+                <input type="text" class="search-bar" id="input" placeholder="Please enter a city name">
+                <button>Search</button>
             </div>
-            <div class="col-md-2 day-3">
-                <h2 id ='date-three'></h2>
-                <p>Temp:  <span class="day-3-temp"></span></p>
-                <p>Wind: <span class="day-3-wind"></span></p>
-                <p>Humidity:  <span class="day-3-humidity"></span></p>
-            </div>
-            <div class="col-md-2 day-4">
-                <h2 id ='date-four'></h2>
-                <p>Temp:  <span class="day-4-temp"></span></p>
-                <p>Wind: <span class="day-4-wind"></span></p>
-                <p>Humidity:  <span class="day-4-humidity"></span></p>
-            </div>
-            <div class="col-md-2 day-5">
-                <h2 id ='date-five'></h2>
-                <p>Temp:  <span class="day-5-temp"></span></p>
-                <p>Wind: <span class="day-5-wind"></span></p>
-                <p>Humidity:  <span class="day-5-humidity"></span></p>
-            </div>
-            <div class="col-md-2 day-6">
-                <h2 id ='date-six'></h2>
-                <p>Temp:  <span class="day-6-temp"></span></p>
-                <p>Wind: <span class="day-6-wind"></span></p>
-                <p>Humidity:  <span class="day-6-humidity"></span></p>
+
+            <div class="savedCity">
+                <div class="cityContainer" id="cityContainer">
+
+                </div>
+
             </div>
         </div>
 
-    
+        <div class="weather-info">
+
+            <div class="today-weather">
+                <p>Current forecast</p>
+                <div class="today">
+                    <h3 class="date"></h2>
+                    <h2 class="city">City:</h2>
+                    <h1 class="temp">°F</h1>
+                    <div class="flex">
+                        <img class ="icon" src="https://openweathermap.org/img/wn/02d.png" alt="" class="" />
+                        <div class="description"></div>
+                    </div>
+                    <div class="humidity">Humidity: %</div>
+                    <div class="wind">Wind speed: km/h</div>
+                </div>
+            </div>
  
 
-    
 
+            <div class="week-weather">
+                <div class="week-day">
+                    <p>Current forecast</p>
+                    <h1 class="temp" id="temp0">°F</h1>
+                    <div class="flex">
+                        <img class ="icon" id ="icon0" src="https://openweathermap.org/img/wn/02d.png"/>
+                        <div class="description" id="description0"></div>
+                    </div>
+                    <div class="humidity" id="humidity0">Humidity:</div>
+                    <div class="wind" id="wind0">Wind:</div>
+                </div>
 
+                <div class="week-day">
+                    <p>Current forecast</p>
+                    <h1 class="temp" id="temp1">°F</h1>
+                    <div class="flex">
+                        <img class ="icon" id ="icon1" src="https://openweathermap.org/img/wn/02d.png"/>
+                        <div class="description" id="description1"></div>
+                    </div>
+                    <div class="humidity" id="humidity1">Humidity:</div>
+                    <div class="wind" id="wind1">Wind:</div>
+                </div>
 
+                <div class="week-day">
+                    <p>Current forecast</p>
+                    <h1 class="temp" id="temp2">°F</h1>
+                    <div class="flex">
+                        <img class ="icon" id ="icon2" src="https://openweathermap.org/img/wn/02d.png"/>
+                        <div class="description" id="description2"></div>
+                    </div>
+                    <div class="humidity" id="humidity2">Humidity:</div>
+                    <div class="wind" id="wind2">Wind: </div>
+                </div>
 
+                <div class="week-day">
+                    <p>Current forecast</p>
+                    <h1 class="temp" id="temp3">°F</h1>
+                    <div class="flex">
+                        <img class ="icon" id ="icon3" src="https://openweathermap.org/img/wn/02d.png"/>
+                        <div class="description" id="description3"></div>
+                    </div>
+                    <div class="humidity" id="humidity3">Humidity:</div>
+                    <div class="wind" id="wind3">Wind:</div>
+                </div>
 
+                <div class="week-day">
+                    <p>Current forecast</p>
+                    <h1 class="temp" id="temp4">°F</h1>
+                    <div class="flex">
+                        <img class ="icon" id ="icon4" src="https://openweathermap.org/img/wn/02d.png"/>
+                        <div class="description" id="description4"></div>
+                    </div>
+                    <div class="humidity" id="humidity4">Humidity:</div>
+                    <div class="wind" id="wind4">Wind:</div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js" ></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="/assets/script.js"></script>
 
-
-
-
-
-    <script type="text/javascript" src="https://momentjs.com/downloads/moment.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.js"></script>
-    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-    <script src="assets/script.js"></script>
 </body>
 </html>
