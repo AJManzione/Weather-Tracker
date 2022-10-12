@@ -6,7 +6,7 @@ displayCity();
 var weather={
 
 
-    fetchWeather:function(city){
+    fetchWeather:function(city) {
         fetch("https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=ba45cee755183b20520597d1996ada97")
         .then( (response) => {
             if (response.ok) {
@@ -29,15 +29,14 @@ var weather={
     displayWeather:function(weatherDt) {
         var {name} = weatherDt;
         var {country} = weatherDt.sys;
-        var {icon,description} = weatherDt.weather[0];
+        var {icon} = weatherDt.weather[0];
         var {temp,humidity} = weatherDt.main;
         var {speed} = weatherDt.wind;
        
 
         document.querySelector(".city").innerText = "Weather today in " + name + " / " + country;
         document.querySelector(".icon").src = "https://openweathermap.org/img/wn/" + icon +".png";
-        document.querySelector(".description").innerText = description;
-        document.querySelector(".temp").innerText = temp + "°F";
+        document.querySelector(".temp").innerText = Math.round(temp) + "°F";
         document.querySelector(".humidity").innerText = "Humidity: " + humidity + "%";
         document.querySelector(".wind").innerText = "Wind: " + speed + "MPH";
 
@@ -53,12 +52,11 @@ var weather={
     },
     displayWeatherW:function(data) {
         for (var i = 0; i < 5; i++){
-            var {icon, description} = data.list[i*8].weather[0];
+            var {icon} = data.list[i*8].weather[0];
             var {temp, humidity} = data.list[i*8].main;
             var { speed } = data.list[i*8].wind;
 
         document.querySelector("#icon"+(i) ).src = "https://openweathermap.org/img/wn/" + icon +".png";
-        document.querySelector("#description"+(i)).innerText = description;
         document.querySelector("#temp"+(i)).innerText = Math.round(temp) + "°F";
         document.querySelector("#humidity"+(i)).innerText = "Humidity: " + humidity + "%";
         document.querySelector("#wind"+(i)).innerText = "Wind: " + speed + "MPH";
@@ -122,7 +120,7 @@ var currentTime = function() {
         var currentDate = moment();
         // console.log(currentDate.toString());
         currentDate.add(i,"days");
-        currentDate = moment(currentDate).format("ddd, MM/DD");
+        currentDate = moment(currentDate).format("MM/DD/YYYY");
         // console.log(currentDate);
         date[i].innerText = currentDate;
 
