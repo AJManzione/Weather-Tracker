@@ -1,8 +1,11 @@
 var savedCity = document.querySelector("#savedCity");
 var storage = [];
 
+//first function called on webpage open
 displayCityName();
 
+
+// gets city input, asks if city is a real city if not display alert but if it is, stores the city into the empty storage array
 var weather={
     getWeather:function(city){
         fetch('https://api.openweathermap.org/data/2.5/weather?q=' + city + '&units=imperial&appid=ba45cee755183b20520597d1996ada97')
@@ -20,7 +23,7 @@ var weather={
               return;
             }
           })
-    },
+    }, // displays the weather for today into the main box
     displayWeather:function(todayWeather) {
         var {name} = todayWeather;
         var {icon} = todayWeather.weather[0];
@@ -34,13 +37,13 @@ var weather={
         document.querySelector(".wind").innerText = 'Wind: ' + speed + "MPH";
 
     },
-
+    // fetches the weekly weather forecast 
     getWeeklyWeather:function(city) {
         fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + city + '&units=imperial&appid=ba45cee755183b20520597d1996ada97')
         .then((response) => response.json())
         .then((data) => this.weeklyWeather(data));
 
-    },
+    },  //displays weekly weather in appropriate boxes
     weeklyWeather:function(data) {
         for (var i = 0; i < 5; i++){
             var {icon} = data.list[i * 8].weather[0];
