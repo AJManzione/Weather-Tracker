@@ -43,12 +43,11 @@ var weather={
     },
     weeklyWeather:function(data) {
         for (var i = 0; i < 5; i++){
-            var {icon, description} = data.list[i * 8].weather[0];
+            var {icon} = data.list[i * 8].weather[0];
             var {temp, humidity} = data.list[i * 8].main;
-            var { speed } = data.list[i * 8].wind;
+            var {speed} = data.list[i * 8].wind;
 
         document.querySelector("#icon"+(i) ).src = "https://openweathermap.org/img/wn/" + icon +'.png';
-        document.querySelector("#description"+(i)).innerText = description;
         document.querySelector("#temp"+(i)).innerText = Math.round(temp) + '°F';
         document.querySelector("#humidity"+(i)).innerText = 'Humidity: ' + humidity + '%';
         document.querySelector("#wind"+(i)).innerText = 'Wind: ' + speed + 'MPH';
@@ -71,9 +70,6 @@ document.querySelector(".search-bar").addEventListener("keyup",function(event){
         weather.search();
     }
 })
-
-
-
 
 function displayCityName() {
     var storedCities = JSON.parse(localStorage.getItem("cities"));

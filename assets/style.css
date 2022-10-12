@@ -1,4 +1,4 @@
-*{
+* {
     box-sizing: border-box;
     padding:0;
     margin:0;
@@ -27,8 +27,6 @@ header {
     font-size: 2em;
     font-weight: bolder;
     background-image: linear-gradient(-20deg, #0f2d41 0%, #1c1146 100%);
-
-
 }
 
 #five-day {
@@ -71,11 +69,10 @@ main.card {
     height: 100%;
     padding: 10px;
 }
+
 .div-search{
     margin-bottom: 20px;
 }
-
-
 
 .search-button {
     font-size: 20px;
@@ -84,13 +81,8 @@ main.card {
     margin-bottom: 5px;
     border-radius: 10px;
     cursor: pointer;
-    background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
-    
-    
+    background-image: linear-gradient(to top, #09203f 0%, #537895 100%);   
 }
-
-
-
 
 .btn {
     width: 100%;
@@ -125,7 +117,7 @@ main.card {
     background-image: linear-gradient(45deg, #93a5cf 0%, #e4efe9 100%);
 }
 
-.week-weather {
+.five-day-forecast {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -133,15 +125,13 @@ main.card {
     margin: 25px;
 }
 
-.week-day {
+.time-block {
     padding: 15px;
     color: white;
     margin: 5px;
     width: 19.2%;
     height: 300px;
     border-radius: 2px;
-    background-image: linear-gradient(to right, #434343 0%, black 100%);;
-
-    
+    background-image: linear-gradient(to right, #434343 0%, black 100%);   
 }
 
